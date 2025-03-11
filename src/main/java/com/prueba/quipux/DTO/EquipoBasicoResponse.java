@@ -12,4 +12,5 @@ public class EquipoBasicoResponse {
     private String nombreEquipo;
     private Integer cantidadTitulos;
     private Integer cantidadJugadores;
+    private String estadioEquipo;
 }

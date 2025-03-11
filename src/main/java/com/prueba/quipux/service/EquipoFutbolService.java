@@ -52,8 +52,8 @@ public class EquipoFutbolService {
         List<EquipoBasicoResponse> equiposLista = StreamSupport.stream(equiposIterable.spliterator(), false)
                 .map(equipoEntity -> {
                     EquipoBasicoResponse response = transformBasicoResponse(equipoEntity);
-                    Integer cantidadJugadores = jugadorRepository.countByEquipoId(equipoEntity.getEquipoId());
-                    response.setCantidadJugadores(cantidadJugadores);
+                    Integer cantidadJugadoresPrueba = jugadorRepository.countByEquipoId(equipoEntity.getEquipoId());
+                    response.setCantidadJugadores(cantidadJugadoresPrueba);
                     return response;
                 })
                 .collect(Collectors.toList());
@@ -64,6 +64,7 @@ public class EquipoFutbolService {
         EquipoBasicoResponse response = new EquipoBasicoResponse();
         response.setNombreEquipo(entity.getNombreEquipo());
         response.setCantidadTitulos(entity.getCantidadTitulos());
+        response.setEstadioEquipo(entity.getEstadioEquipo());
         return response;
     }
 
